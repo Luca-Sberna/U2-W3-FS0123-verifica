@@ -1,3 +1,15 @@
 img {
     cursor: pointer;
 }
+
+h5 {
+    cursor: pointer;
+}
+
+.nav-item {
+    cursor: pointer;
+}
+
+svg {
+    cursor: pointer;
+}

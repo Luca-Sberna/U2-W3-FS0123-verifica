@@ -62,7 +62,7 @@ const createProductCard = (productData) => {
     addButtonChange.innerText = 'Change';
     divFirstBtn.appendChild(addButtonChange);
     cardBody.appendChild(divFirstBtn);
-    divFirstBtn.classList.add('d-flex', 'justify-content-between', 'gap-2', 'flex-wrap');
+    divFirstBtn.classList.add('pt-3', 'd-flex', 'justify-content-between', 'gap-2', 'flex-wrap');
 
     const addButtonView = document.createElement('button');
     addButtonView.classList.add('btn', 'btn-dark', 'mt-2');
@@ -72,8 +72,10 @@ const createProductCard = (productData) => {
     cardBody.appendChild(divBtn);
 
 
+
     return card;
 };
+
 
 
 const loadProducts = async () => {
@@ -95,3 +97,7 @@ const loadProducts = async () => {
 window.onload = () => {
     loadProducts().catch((error) => console.log(error));
 };
+
+
+
+
