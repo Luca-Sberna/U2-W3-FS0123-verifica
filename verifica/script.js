@@ -20,31 +20,61 @@ const fetchProduct = async (productId) => {
 
 const createProductCard = (productData) => {
     const card = document.createElement('div');
-    card.classList.add('card');
-
-    const title = document.createElement('h3');
-    title.classList.add('card-title');
-    title.innerText = productData.name;
-    card.appendChild(title);
-
-    const description = document.createElement('p');
-    description.classList.add('card-description');
-    description.innerText = productData.description;
-    card.appendChild(description);
-
-    const price = document.createElement('p');
-    price.classList.add('card-price');
-    price.innerText = `${productData.price} €`;
-    card.appendChild(price);
+    card.classList.add('card', 'col-2');
 
     const image = document.createElement('img');
-    image.classList.add('card-image');
+    image.classList.add('card-img-top', 'p-2');
     image.src = productData.imageUrl;
     image.alt = productData.name;
+
     card.appendChild(image);
+
+    const cardBody = document.createElement('div');
+    cardBody.classList.add('card-body');
+    card.appendChild(cardBody);
+
+    const title = document.createElement('h5');
+    title.classList.add('card-title');
+    title.innerText = productData.name;
+    cardBody.appendChild(title);
+
+    const description = document.createElement('p');
+    description.classList.add('card-text');
+    description.innerText = productData.description;
+    cardBody.appendChild(description);
+
+    const price = document.createElement('h6');
+    price.classList.add('card-subtitle');
+    price.classList.add('mb-2');
+    price.classList.add('text-muted');
+    price.innerText = `${productData.price} €`;
+    cardBody.appendChild(price);
+
+    let divFirstBtn = document.createElement('div');
+    const addButton = document.createElement('button');
+    addButton.classList.add('btn', 'btn-info');
+    addButton.innerText = 'Add to Cart';
+    divFirstBtn.appendChild(addButton);
+    cardBody.appendChild(divFirstBtn);
+
+    const addButtonChange = document.createElement('button');
+    addButtonChange.classList.add('btn', 'btn-success');
+    addButtonChange.innerText = 'Change';
+    divFirstBtn.appendChild(addButtonChange);
+    cardBody.appendChild(divFirstBtn);
+    divFirstBtn.classList.add('d-flex', 'justify-content-between', 'gap-2', 'flex-wrap');
+
+    const addButtonView = document.createElement('button');
+    addButtonView.classList.add('btn', 'btn-dark', 'mt-2');
+    addButtonView.innerText = 'View';
+    let divBtn = document.createElement('div');
+    divBtn.appendChild(addButtonView);
+    cardBody.appendChild(divBtn);
+
 
     return card;
 };
+
 
 const loadProducts = async () => {
     const productListUrl = `${BASE_URL}/`;
@@ -60,6 +90,7 @@ const loadProducts = async () => {
         container.appendChild(card);
     }
 };
+
 
 window.onload = () => {
     loadProducts().catch((error) => console.log(error));
