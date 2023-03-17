@@ -71,8 +71,6 @@ const createProductCard = (productData) => {
     divBtn.appendChild(addButtonView);
     cardBody.appendChild(divBtn);
 
-
-
     return card;
 };
 
