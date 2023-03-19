@@ -1,3 +1,14 @@
+<!--  mi sono accorto dopo aver lavorato in fretta e furia per quasi due giorni senza leggere bene la traccia,
+     di aver suddiviso in troppi piccoli problemi il progetto,cercando di fare tutto in un file js,
+      e accorgendomi di aver messo delle funzioni che sarebbero dovute essere in altri file, nell'index e viceversa ,
+     ed era il motivo del perchè non mi funzionavano alcune cose colpa di alcuni ragionamenti iniziali che mi portarono fuori strada ,
+      seguendo le documentazioni,riguardando le lezioni e video su YT ho risolto spartendomi le varie funzioni nei loro appositi file
+      riuscendo ad aggiungere e a sistemare un po di stile alla fine.
+      
+      PS.avrei voluto aggiungerti il carrello e la possibilità di inserire i prodotti eventualmente da comprare ma 
+      non ce l'ho fatta col tempo T.T. 
+ -->
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -18,15 +29,18 @@
                 <ul class="navbar-nav ">
                     <div class="container-fluid d-flex align-items-center p-0 ">
                         <div class="navbar-brand">
-                            <li class="nav-item ">
-                                <img src="assets/img/1f6cd.svg" class="me-2" width="35px" alt="logo">CRUDAZON
-                            </li>
+                            <a href="index.html" class="nav-link p-0">
+                                <li class="nav-item ">
+                                    <img src="assets/img/1f6cd.svg" class="me-2 shadow-none" width="35px"
+                                        alt="logo">CRUDAZON
+                                </li>
+                            </a>
                         </div>
                 </ul>
 
                 <div class="navbar gap-2">
-                    <input type="text" placeholder="Cerca qui"><svg xmlns="http://www.w3.org/2000/svg" width="16"
-                        height="16" fill="currentColor" class="bi bi-search" viewBox="0 0 16 16">
+                    <input class="rounded" type="text" placeholder="Cerca qui"><svg xmlns="http://www.w3.org/2000/svg"
+                        width="16" height="16" fill="currentColor" class="bi bi-search" viewBox="0 0 16 16">
                         <path
                             d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001c.03.04.062.078.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1.007 1.007 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0z" />
                     </svg>
@@ -34,11 +48,7 @@
 
                 <ul class="navbar-nav">
                     <div class="d-flex align-items-center ">
-                        <li><a href="#" class="nav-link me-2"> Backoffice</a></li>
-                        <button class="btn btn-dark " type="button" data-bs-toggle="offcanvas"
-                            data-bs-target="#offcanvas" aria-controls="offcanvas">
-                            🛒
-                        </button>
+                        <li><a href="backoffice.html" class="nav-link me-2"> Backoffice</a></li>
                     </div>
             </div>
             </ul>
@@ -46,13 +56,13 @@
     </header>
 
     <main>
+        <section>
+            <h1 class="text-center p-4">Articoli più desiderati</h1>
 
-        <h1 class="text-center p-4">Articoli più desiderati</h1>
-
-        <div id="product-card" class=" flex-wrap d-flex flex-grow  gap-4 justify-content-center">
-            <div class="contenitore row flex-grow "></div>
-        </div>
-
+            <div id="product-card" class=" flex-wrap d-flex flex-grow  gap-4 justify-content-center">
+                <div id="cont-card" class="contenitore row flex-grow "></div>
+            </div>
+        </section>
     </main>
 
 
